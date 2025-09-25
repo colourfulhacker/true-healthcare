@@ -90,7 +90,7 @@ export default function Opportunity() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/apply" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg inline-flex items-center justify-center"
+                className="gradient-premium text-white hover:opacity-90 px-8 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 premium-shadow inline-flex items-center justify-center"
                 data-testid="button-apply-now"
               >
                 <Handshake className="mr-2" size={20} />

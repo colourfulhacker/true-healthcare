@@ -223,7 +223,7 @@ export default function FranchiseForm() {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground px-12 py-4 text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+              className="gradient-premium text-white hover:opacity-90 px-12 py-4 text-lg font-bold transition-all transform hover:scale-105 premium-shadow"
               data-testid="button-submit-application"
             >
               <Send className="mr-2" size={20} />

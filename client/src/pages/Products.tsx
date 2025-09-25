@@ -273,7 +273,7 @@ export default function Products() {
           <div className="text-center">
             <Link 
               href="/apply" 
-              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg inline-flex items-center"
+              className="gradient-premium text-white hover:opacity-90 px-8 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 premium-shadow inline-flex items-center"
               data-testid="button-become-distributor"
             >
               Become a Distributor for These Best-Selling Products

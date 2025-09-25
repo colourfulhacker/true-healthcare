@@ -35,7 +35,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link 
                 href="/apply" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg inline-flex items-center justify-center"
+                className="gradient-premium text-white hover:opacity-90 px-8 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 premium-shadow inline-flex items-center justify-center"
                 data-testid="button-apply-franchise"
               >
                 <Handshake className="mr-2" size={20} />
@@ -43,7 +43,7 @@ export default function Hero() {
               </Link>
               <a 
                 href="#opportunity" 
-                className="bg-white/20 glass-effect hover:bg-white/30 text-white border-2 border-white/50 px-8 py-4 rounded-lg text-lg font-semibold transition-all inline-flex items-center justify-center"
+                className="bg-white/20 glass-effect hover:bg-white/30 text-white border-2 border-accent/50 px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 premium-glow inline-flex items-center justify-center"
                 data-testid="button-download-kit"
               >
                 <Download className="mr-2" size={20} />
@@ -55,9 +55,9 @@ export default function Hero() {
           <div className="text-center">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" 
-                alt="Successful Indian healthcare distributor" 
-                className="rounded-2xl shadow-2xl mx-auto w-full max-w-md"
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" 
+                alt="Successful business partnership and franchise opportunity" 
+                className="rounded-2xl premium-shadow mx-auto w-full max-w-md"
                 data-testid="img-hero-entrepreneur"
               />
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white rounded-lg px-6 py-3 shadow-lg">
