@@ -4,15 +4,80 @@ import path from "path";
 
 const app = express();
 
+// Add middleware for parsing JSON
+app.use(express.json());
+
+// Import storage
+import { storage } from "./storage";
+import { insertProductInquirySchema } from "../shared/schema";
+
+// API Routes
+app.post('/api/product-inquiries', async (req, res) => {
+  try {
+    // Validate the request body using the schema
+    const validatedData = insertProductInquirySchema.parse(req.body);
+    
+    // Store in database
+    const inquiry = await storage.createProductInquiry(validatedData);
+    
+    // Log the inquiry for the business owner to see
+    console.log('New Product Inquiry Received:', {
+      id: inquiry.id,
+      productName: inquiry.productName,
+      customerName: inquiry.fullName,
+      phone: inquiry.phone,
+      email: inquiry.email,
+      city: inquiry.city,
+      state: inquiry.state,
+      quantity: inquiry.quantity,
+      timestamp: inquiry.createdAt
+    });
+    
+    res.status(201).json({ 
+      success: true, 
+      message: 'Product inquiry submitted successfully',
+      inquiryId: inquiry.id 
+    });
+  } catch (error) {
+    console.error('Error processing product inquiry:', error);
+    if (error instanceof Error && error.name === 'ZodError') {
+      res.status(400).json({ 
+        success: false, 
+        message: 'Invalid inquiry data provided.' 
+      });
+    } else {
+      res.status(500).json({ 
+        success: false, 
+        message: 'Failed to submit inquiry. Please try again.' 
+      });
+    }
+  }
+});
+
+// API route to get product inquiries (for admin access)
+app.get('/api/product-inquiries', async (req, res) => {
+  try {
+    const inquiries = await storage.getProductInquiries();
+    res.json({ 
+      success: true, 
+      inquiries: inquiries.reverse() // Most recent first
+    });
+  } catch (error) {
+    console.error('Error fetching product inquiries:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to fetch inquiries.' 
+    });
+  }
+});
+
 async function setupVite() {
   // Create Vite server in middleware mode for development
   const vite = await createViteServer({
     server: { 
       middlewareMode: true,
       allowedHosts: true,
-      hmr: {
-        port: 5001
-      }
+      hmr: false
     },
     appType: "spa", 
     root: path.resolve(process.cwd(), "client"),

@@ -44,3 +44,24 @@ export const userSchema = insertUserSchema.extend({
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = z.infer<typeof userSchema>;
+
+// Product inquiry types (for customers to inquire about products for direct delivery)
+export const insertProductInquirySchema = z.object({
+  fullName: z.string().min(1, "Full name is required"),
+  phone: z.string().min(1, "Phone number is required"),
+  email: z.string().email("Valid email is required"),
+  city: z.string().min(1, "City is required"),
+  state: z.string().min(1, "State is required"),
+  address: z.string().min(1, "Complete address is required"),
+  productName: z.string().min(1, "Product name is required"),
+  quantity: z.string().min(1, "Quantity is required"),
+  message: z.string().optional(),
+});
+
+export const productInquirySchema = insertProductInquirySchema.extend({
+  id: z.string(),
+  createdAt: z.date(),
+});
+
+export type InsertProductInquiry = z.infer<typeof insertProductInquirySchema>;
+export type ProductInquiry = z.infer<typeof productInquirySchema>;

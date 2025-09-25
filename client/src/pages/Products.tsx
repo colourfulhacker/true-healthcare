@@ -1,7 +1,9 @@
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { TrendingUp, ArrowRight, Package, Users, Heart, Zap, Baby, Droplet } from "lucide-react";
+import ProductInquiryForm from "@/components/ProductInquiryForm";
+import { Button } from "@/components/ui/button";
+import { TrendingUp, ArrowRight, Package, Users, Heart, Zap, Baby, Droplet, ShoppingCart } from "lucide-react";
 
 // Import actual product images
 import livAmritGoldImage from "@/assets/liv-amrit-gold-tablets.jpg";
@@ -171,11 +173,25 @@ export default function Products() {
                         <p className="text-xs text-muted-foreground leading-relaxed">{product.supplementFacts}</p>
                       </div>
                       
-                      <div className="flex items-center text-trust">
-                        <TrendingUp className="mr-2" size={16} />
-                        <span className="font-medium text-sm" data-testid={`status-tablet-product-${index}`}>
-                          {product.marketStatus}
-                        </span>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center text-trust">
+                          <TrendingUp className="mr-2" size={16} />
+                          <span className="font-medium text-sm" data-testid={`status-tablet-product-${index}`}>
+                            {product.marketStatus}
+                          </span>
+                        </div>
+                        
+                        <ProductInquiryForm productName={product.name}>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            className="border-primary text-primary hover:bg-primary hover:text-white transition-colors"
+                            data-testid={`button-inquire-tablet-${index}`}
+                          >
+                            <ShoppingCart className="mr-2" size={16} />
+                            Inquire About This Product
+                          </Button>
+                        </ProductInquiryForm>
                       </div>
                     </div>
                   </div>
@@ -226,11 +242,25 @@ export default function Products() {
                       <p className="text-xs text-muted-foreground leading-relaxed">{product.supplementFacts}</p>
                     </div>
                     
-                    <div className="flex items-center text-trust">
-                      <TrendingUp className="mr-2" size={16} />
-                      <span className="font-medium text-sm" data-testid={`status-liquid-product-${index}`}>
-                        {product.marketStatus}
-                      </span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-trust">
+                        <TrendingUp className="mr-2" size={16} />
+                        <span className="font-medium text-sm" data-testid={`status-liquid-product-${index}`}>
+                          {product.marketStatus}
+                        </span>
+                      </div>
+                      
+                      <ProductInquiryForm productName={product.name}>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          className="border-primary text-primary hover:bg-primary hover:text-white transition-colors"
+                          data-testid={`button-inquire-liquid-${index}`}
+                        >
+                          <ShoppingCart className="mr-2" size={16} />
+                          Inquire About This Product
+                        </Button>
+                      </ProductInquiryForm>
                     </div>
                   </div>
                 </div>

@@ -27,7 +27,7 @@ localPort = 33757
 externalPort = 3000
 
 [[ports]]
-localPort = 35457
+localPort = 34055
 externalPort = 4200
 
 [[ports]]
@@ -42,7 +42,7 @@ externalPort = 3001
 PORT = "5000"
 
 [agent]
-integrations = ["javascript_mem_db:1.0.0"]
+integrations = ["javascript_mem_db:1.0.0", "javascript_database:1.0.0"]
 expertMode = true
 
 [workflows]

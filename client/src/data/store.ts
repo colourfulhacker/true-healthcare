@@ -1,4 +1,4 @@
-import { type Territory, type FranchiseInquiry, type InsertFranchiseInquiry, insertFranchiseInquirySchema } from "../schema";
+import { type Territory, type FranchiseInquiry, type InsertFranchiseInquiry, insertFranchiseInquirySchema, type ProductInquiry, type InsertProductInquiry, insertProductInquirySchema } from "../schema";
 
 // Initial territory data
 const initialTerritories: Territory[] = [
@@ -147,4 +147,57 @@ export function getFranchiseInquiries(): FranchiseInquiry[] {
 
 export function clearFranchiseInquiries(): void {
   localStorage.removeItem(INQUIRIES_KEY);
+}
+
+// Product inquiry functions with localStorage persistence
+const PRODUCT_INQUIRIES_KEY = 'product_inquiries';
+
+function getStoredProductInquiries(): ProductInquiry[] {
+  try {
+    const stored = localStorage.getItem(PRODUCT_INQUIRIES_KEY);
+    if (!stored) return [];
+    
+    const parsed = JSON.parse(stored);
+    // Convert createdAt strings back to Date objects
+    return parsed.map((inquiry: any) => ({
+      ...inquiry,
+      createdAt: new Date(inquiry.createdAt)
+    }));
+  } catch (error) {
+    console.warn('Failed to load stored product inquiries:', error);
+    return [];
+  }
+}
+
+function saveProductInquiries(inquiries: ProductInquiry[]): void {
+  try {
+    localStorage.setItem(PRODUCT_INQUIRIES_KEY, JSON.stringify(inquiries));
+  } catch (error) {
+    console.warn('Failed to save product inquiries:', error);
+  }
+}
+
+export function createProductInquiry(data: InsertProductInquiry): ProductInquiry {
+  // Validate input data
+  const validatedData = insertProductInquirySchema.parse(data);
+  
+  const inquiry: ProductInquiry = {
+    ...validatedData,
+    id: generateId(),
+    createdAt: new Date()
+  };
+  
+  const inquiries = getStoredProductInquiries();
+  inquiries.push(inquiry);
+  saveProductInquiries(inquiries);
+  
+  return inquiry;
+}
+
+export function getProductInquiries(): ProductInquiry[] {
+  return getStoredProductInquiries();
+}
+
+export function clearProductInquiries(): void {
+  localStorage.removeItem(PRODUCT_INQUIRIES_KEY);
 }
