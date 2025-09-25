@@ -11,7 +11,7 @@ async function setupVite() {
       middlewareMode: true,
       allowedHosts: true,
       hmr: {
-        clientPort: 80
+        port: 5001
       }
     },
     appType: "spa", 
