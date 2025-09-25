@@ -1,0 +1,131 @@
+Excellent. This detailed information is exactly what is needed to create a powerful B2B franchise recruitment website. The focus is clear: attract and convert business partners, not sell products to individual customers.
+
+Here is the final, comprehensive prompt for your AI website builder. This prompt is structured to build a website focused entirely on generating franchise enquiries.
+
+Final Prompt for AI Website Builder (Franchise Recruitment Model)
+Act as an expert web developer and business consultant. You are building a high-conversion B2B franchise recruitment website for an Indian company called "TRUE Healthcare™". The ONLY goal of this website is to attract and sign up new franchisees and distributors across India. The target audience is entrepreneurs and business owners.
+
+1. CORE IDENTITY & FUNCTIONALITY:
+
+Brand: TRUE Healthcare™
+
+Model: B2B Franchise Recruitment.
+
+Functionality: This is a lead generation website. There must be NO e-commerce, NO shopping cart, NO product prices, and NO "buy now" buttons. The primary calls-to-action (CTAs) are "Apply for Franchise" and "Download Franchise Kit".
+
+2. LOGO & BRANDING:
+
+Logo: Generate a professional, trustworthy logo for "TRUE Healthcare™". It should look premium and established.
+
+Color Palette: Use a corporate and trustworthy color scheme. Primary colors: Deep Blue, Professional Grey, and White. Accent color: Gold or a vibrant Green for buttons and highlights.
+
+Fonts: Use a clean, professional font like 'Montserrat' or 'Lato'.
+
+3. WEBSITE STRUCTURE & PAGES:
+Create a website with the following pages in the main navigation menu:
+
+Home
+
+The Opportunity
+
+Our Products
+
+Apply Now (This should be a prominent button)
+
+4. DETAILED PAGE-BY-PAGE INSTRUCTIONS:
+
+A. Homepage (The Main Landing Page)
+
+The homepage must be built with the following sections in this exact order:
+
+1. Hero Section (High Impact):
+
+Headline: "Start Your Own Business with TRUE Healthcare™ – India’s Trusted Wellness Brand"
+
+Subline: "Premium Food Supplements – Detox, Women, Men, Kids & Oral Care Products"
+
+Visuals: Design a professional banner featuring a smiling, successful-looking distributor holding some products. Overlay trust badges that say "FSSAI Approved", "Premium Quality", and "100% Natural".
+
+CTA Buttons: Two prominent buttons side-by-side: [Apply for Franchise] and [Download Franchise Kit].
+
+2. Why Partner With TRUE Healthcare? (Trust Section):
+
+Create a section with a clear heading. Use icons for each of the following benefits:
+
+Trusted Brand: With a strong market presence.
+
+Exclusive Territories: Monopoly rights from State down to Panchayat level.
+
+High Profit Margins: Clearly state "25%–40% Profit Margins".
+
+Full Support: Marketing materials and comprehensive training provided.
+
+Fast ROI: High demand ensures quick returns on investment.
+
+Wide Product Range: Diverse portfolio covering major wellness categories.
+
+3. Opportunity Snapshot Section:
+
+Heading: "A Snapshot of Your Opportunity"
+
+Investment Options: Create three visually distinct boxes for the investment tiers: "₹50K–₹1L", "₹1L–₹3L", and "₹3L+".
+
+Technology: Add a feature highlight: "Includes access to our advanced Distributor Dashboard for easy order and stock management."
+
+Slot Availability: Design a visual element that looks like a live tracker. It should have a heading "Check Live Slot Availability" and point users towards the "Apply Now" page.
+
+4. How to Become a Partner (Step-by-Step Process):
+
+Create a clean, 5-step horizontal or vertical timeline graphic:
+
+Fill Enquiry Form: Quick and easy application.
+
+Verification & Area Mapping: Our team verifies your details.
+
+Sign Agreement + Training: Formalize the partnership and get trained.
+
+Start Business in Your Area: Launch your distributorship.
+
+Ongoing Support & Updates: We are with you at every step.
+
+B. Our Products Page:
+
+Heading: "Our Diverse Range of High-Demand Products"
+
+Content: This page is a catalog to impress potential distributors, not to sell to customers.
+
+Showcase the product categories with professional images: Detox & Juices, Women's Wellness, Men's Vitality, Kids' Health & Nutrition, and Oral Care.
+
+For each category, write a short sentence about the market demand for these products. Example: "Our Women's Wellness range addresses key health concerns, ensuring a consistent customer base for our partners."
+
+Include a strong CTA at the bottom: "Become a Distributor for These Best-Selling Products" which links to the "Apply Now" page.
+
+C. Apply Now (Franchise Enquiry Form Page):
+
+Heading: "Apply for Your Exclusive TRUE Healthcare™ Franchise"
+
+Interactive Map & Slot Tracker (UI Design):
+
+At the very top of this page, design an interactive-looking tool.
+
+Headline: "Check Real-Time Slot Availability in Your Area"
+
+Interface: Create four dropdown menus in a row: [Select State] → [Select District] → [Select Tehsil] → [Select Panchayat].
+
+Status Indicator: Below the dropdowns, create a dynamic text box. Design it to show urgency-driven messages. For example:
+
+Before selection: "Please select your desired location to check for open slots."
+
+After selection (if available): A green box with the message: "Congratulations! Only 2 slots left in this area! Apply now to claim yours."
+
+After selection (if unavailable): A red box with the message: "We're sorry, this area is currently fully allocated. Please check a nearby location or contact us for future openings."
+
+Distributor / Franchise Enquiry Form:
+
+Place this form directly below the interactive slot checker.
+
+Required Fields: Full Name, Phone Number, Email, City, State, and the specific Tehsil/Panchayat you are applying for.
+
+Dropdown Menu: "Proposed Investment Level" with options: ₹50,000–₹1 Lakh, ₹1 Lakh–₹3 Lakh, ₹3 Lakh+.
+
+Submit Button: "Submit My Application".
