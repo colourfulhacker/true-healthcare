@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { Plus, MapPin, Phone, Tag } from "lucide-react";
+import { MapPin, Phone, Tag } from "lucide-react";
+import logoUrl from "../assets/true-healthcare-logo.jpg";
 
 export default function Footer() {
   return (
@@ -8,8 +9,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-3">
-                <Plus className="text-white" />
+              <div className="w-10 h-10 mr-3 flex items-center justify-center">
+                <img 
+                  src={logoUrl} 
+                  alt="TRUE Healthcare™ Logo" 
+                  className="w-10 h-10 object-contain rounded-full bg-white p-1"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold">TRUE Healthcare™</h3>

@@ -55,8 +55,8 @@ export default function Hero() {
           <div className="text-center">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" 
-                alt="Successful healthcare entrepreneur with products" 
+                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" 
+                alt="Successful Indian healthcare distributor" 
                 className="rounded-2xl shadow-2xl mx-auto w-full max-w-md"
                 data-testid="img-hero-entrepreneur"
               />

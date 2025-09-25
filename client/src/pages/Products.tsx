@@ -6,25 +6,25 @@ import { TrendingUp, ArrowRight } from "lucide-react";
 const productCategories = [
   {
     title: "Detox & Juices",
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    image: "https://images.unsplash.com/photo-1609501676725-7186f78e9b50?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
     description: "Our Super Detox Plus range addresses the growing demand for natural cleansing solutions, ensuring a consistent customer base for health-conscious consumers.",
     marketStatus: "High Market Demand"
   },
   {
     title: "Women's Wellness",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    image: "https://images.unsplash.com/photo-1594824153122-68dfcd6a7b30?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
     description: "Our Nari Amrit range addresses key women's health concerns including hormonal balance and vitality, ensuring a dedicated customer following.",
     marketStatus: "Growing Market Segment"
   },
   {
     title: "Men's Vitality",
-    image: "https://images.unsplash.com/photo-1571019613540-996a0ad18e36?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    image: "https://images.unsplash.com/photo-1554344728-bbc732aa7dcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
     description: "Our Shakti Veer Plus and LivAmrit products target men's energy, vitality, and liver health - a rapidly expanding market segment.",
     marketStatus: "Premium Market Position"
   },
   {
     title: "Kids' Health & Nutrition",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
     description: "Our True Kids Care range focuses on immunity and growth, tapping into parents' priority for children's health and development.",
     marketStatus: "Parent Priority Market"
   },
@@ -36,7 +36,7 @@ const productCategories = [
   },
   {
     title: "Complete Wellness Portfolio",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
     description: "Access to our entire range ensures you can serve every customer's wellness needs, maximizing your revenue potential.",
     marketStatus: "Maximum Revenue Potential"
   }

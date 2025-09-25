@@ -12,13 +12,13 @@
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(222.2, 84%, 4.9%);
   --primary: hsl(217, 91%, 27%);
-  --primary-foreground: hsl(210, 40%, 98%);
+  --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(210, 40%, 96%);
   --secondary-foreground: hsl(222.2, 84%, 4.9%);
   --muted: hsl(217, 12%, 84%);
   --muted-foreground: hsl(215, 16%, 47%);
   --accent: hsl(43, 96%, 56%);
-  --accent-foreground: hsl(222.2, 84%, 4.9%);
+  --accent-foreground: hsl(0, 0%, 0%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(210, 40%, 98%);
   --border: hsl(214.3, 31.8%, 91.4%);

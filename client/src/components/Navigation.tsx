@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Plus } from "lucide-react";
+import logoUrl from "../assets/true-healthcare-logo.jpg";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -10,8 +10,12 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center" data-testid="link-home">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-3">
-                <Plus className="text-white text-xl" />
+              <div className="w-12 h-12 mr-3 flex items-center justify-center">
+                <img 
+                  src={logoUrl} 
+                  alt="TRUE Healthcare™ Logo" 
+                  className="w-12 h-12 object-contain rounded-full"
+                />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-primary">TRUE Healthcare™</h1>
