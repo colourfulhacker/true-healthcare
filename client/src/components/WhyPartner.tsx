@@ -1,4 +1,6 @@
-import { Shield, MapPin, TrendingUp, Users, Rocket, Package } from "lucide-react";
+import { Shield, MapPin, TrendingUp, Users, Rocket, Package, ArrowRight, MessageCircle } from "lucide-react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 
 const benefits = [
   {
@@ -46,7 +48,7 @@ export default function WhyPartner() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
@@ -68,6 +70,57 @@ export default function WhyPartner() {
               </p>
             </div>
           ))}
+        </div>
+        
+        {/* Call to Action Section */}
+        <div className="bg-gradient-to-r from-trust to-primary rounded-xl p-8 text-white text-center">
+          <h3 className="text-3xl font-bold mb-4" data-testid="heading-convinced">
+            Convinced About the Opportunity?
+          </h3>
+          <p className="text-lg mb-6 text-blue-100">
+            Don't wait - limited territories available. Secure your exclusive area and start building your wellness empire today!
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href="/apply">
+              <Button 
+                size="lg"
+                className="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-bold"
+                data-testid="button-secure-territory"
+              >
+                Secure Your Territory Now
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+            </Link>
+            
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-bold"
+              onClick={() => {
+                const message = `🌿 *TRUE Healthcare™ Partnership Questions*
+
+*Interest:* I'm interested in the TRUE Healthcare™ franchise opportunity
+
+*Questions:* I would like to know more about:
+- Territory availability in my area
+- Investment requirements and options
+- Training and support provided
+- Expected profit margins and ROI
+- Success stories from existing partners
+
+Please share detailed information to help me make an informed decision.
+
+Thank you! 🙏`;
+                const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/919660393455?text=${encodedMessage}`, '_blank');
+              }}
+              data-testid="button-ask-questions"
+            >
+              <MessageCircle className="mr-2" size={20} />
+              Ask Questions
+            </Button>
+          </div>
         </div>
       </div>
     </section>

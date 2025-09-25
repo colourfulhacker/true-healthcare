@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { insertProductInquirySchema, type InsertProductInquiry } from "../../../shared/schema";
-import { Package } from "lucide-react";
+import { sendProductInquiryToWhatsApp } from "@/lib/whatsapp";
+import { Package, MessageCircle } from "lucide-react";
 
 interface ProductInquiryFormProps {
   productName: string;
@@ -209,7 +210,7 @@ export default function ProductInquiryForm({ productName, children }: ProductInq
               )}
             />
 
-            <div className="flex justify-end gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row justify-end gap-4 pt-4">
               <Button
                 type="button"
                 variant="outline"
@@ -217,6 +218,32 @@ export default function ProductInquiryForm({ productName, children }: ProductInq
                 data-testid="button-product-inquiry-cancel"
               >
                 Cancel
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                className="border-green-500 text-green-600 hover:bg-green-50"
+                onClick={() => {
+                  const formData = form.getValues();
+                  if (formData.fullName && formData.phone && formData.email && formData.city && formData.state && formData.address && formData.quantity) {
+                    // Ensure productName is included from props
+                    const completeFormData = {
+                      ...formData,
+                      productName: productName
+                    };
+                    sendProductInquiryToWhatsApp(completeFormData);
+                  } else {
+                    toast({
+                      title: "Please fill all required fields",
+                      description: "Complete the form before sending to WhatsApp",
+                      variant: "destructive",
+                    });
+                  }
+                }}
+                data-testid="button-product-inquiry-whatsapp"
+              >
+                <MessageCircle className="mr-2" size={16} />
+                Send via WhatsApp
               </Button>
               <Button
                 type="submit"

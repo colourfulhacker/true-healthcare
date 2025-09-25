@@ -42,14 +42,30 @@ export default function Hero() {
                 <Handshake className="mr-2" size={20} />
                 Apply for Franchise
               </Link>
-              <a 
-                href="#opportunity" 
+              <button 
+                onClick={() => {
+                  const message = `🌿 *TRUE Healthcare™ Franchise Kit Request*
+
+*Request:* Please share the complete franchise information kit including:
+📋 Business model overview
+💰 Investment requirements and packages
+🗺️ Territory allocation details
+📊 Profit margins and ROI projections
+🎯 Marketing and support materials
+📞 Contact information for next steps
+
+I'm interested in starting a wellness business with TRUE Healthcare™.
+
+Thank you! 🙏`;
+                  const encodedMessage = encodeURIComponent(message);
+                  window.open(`https://wa.me/919660393455?text=${encodedMessage}`, '_blank');
+                }}
                 className="bg-white/20 glass-effect hover:bg-white/30 text-white border-2 border-accent/50 px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 premium-glow inline-flex items-center justify-center"
                 data-testid="button-download-kit"
               >
                 <Download className="mr-2" size={20} />
-                Download Franchise Kit
-              </a>
+                Get Franchise Kit
+              </button>
             </div>
           </div>
           

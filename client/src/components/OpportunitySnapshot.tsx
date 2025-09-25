@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { Check, Tablet, ArrowRight } from "lucide-react";
+import { Check, Tablet, ArrowRight, MessageCircle, FileText } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const investmentTiers = [
   {
@@ -56,7 +57,7 @@ export default function OpportunitySnapshot() {
           {investmentTiers.map((tier, index) => (
             <div 
               key={index}
-              className={`bg-white rounded-xl p-8 shadow-lg text-center border-2 transition-colors relative ${
+              className={`bg-white rounded-xl p-8 shadow-lg text-center border-2 transition-colors relative flex flex-col h-full ${
                 tier.popular 
                   ? "border-accent shadow-xl" 
                   : "border-transparent hover:border-accent"
@@ -72,7 +73,7 @@ export default function OpportunitySnapshot() {
                 {tier.amount}
               </div>
               <h3 className="text-xl font-semibold text-primary mb-4">{tier.title}</h3>
-              <ul className="text-muted-foreground space-y-2 text-left">
+              <ul className="text-muted-foreground space-y-2 text-left mb-6">
                 {tier.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
                     <Check className="text-trust mr-2 mt-0.5 flex-shrink-0" size={16} />
@@ -80,6 +81,45 @@ export default function OpportunitySnapshot() {
                   </li>
                 ))}
               </ul>
+              
+              <div className="flex flex-col gap-3 mt-auto">
+                <Link href="/apply">
+                  <Button 
+                    className="w-full gradient-premium text-white"
+                    data-testid={`button-apply-${index}`}
+                  >
+                    <FileText className="mr-2" size={16} />
+                    Apply for {tier.title}
+                  </Button>
+                </Link>
+                
+                <Button
+                  variant="outline"
+                  className="w-full border-green-500 text-green-600 hover:bg-green-50"
+                  onClick={() => {
+                    const message = `🌿 *TRUE Healthcare™ Franchise Inquiry*
+
+*Package Interest:* ${tier.title} (${tier.amount})
+
+*Request:* I would like detailed information about the ${tier.title} franchise package including:
+- Territory allocation details
+- Product portfolio included
+- Training and support provided
+- Expected ROI and timeline
+- Investment breakdown
+
+Please share comprehensive details about this opportunity.
+
+Thank you! 🙏`;
+                    const encodedMessage = encodeURIComponent(message);
+                    window.open(`https://wa.me/919660393455?text=${encodedMessage}`, '_blank');
+                  }}
+                  data-testid={`button-whatsapp-${index}`}
+                >
+                  <MessageCircle className="mr-2" size={16} />
+                  WhatsApp Inquiry
+                </Button>
+              </div>
             </div>
           ))}
         </div>

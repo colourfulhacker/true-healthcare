@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { MapPin, Phone, Tag } from "lucide-react";
+import { MapPin, Phone, Tag, MessageCircle } from "lucide-react";
 import logoUrl from "../assets/true-healthcare-logo.jpg";
 
 export default function Footer() {
@@ -76,6 +76,18 @@ export default function Footer() {
               <div className="flex items-center">
                 <Phone className="mr-3 flex-shrink-0" size={16} />
                 <span data-testid="text-company-phone">+91 9610485482</span>
+              </div>
+              <div className="flex items-center">
+                <MessageCircle className="mr-3 flex-shrink-0" size={16} />
+                <a 
+                  href="https://wa.me/919660393455" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-200 hover:text-white transition-colors"
+                  data-testid="link-whatsapp-contact"
+                >
+                  WhatsApp: +91 96603 93455
+                </a>
               </div>
               <div className="flex items-center">
                 <Tag className="mr-3 flex-shrink-0" size={16} />

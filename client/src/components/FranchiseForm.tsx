@@ -9,7 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { insertFranchiseInquirySchema } from "../schema";
 import { createFranchiseInquiry } from "../data/store";
-import { Send } from "lucide-react";
+import { sendFranchiseInquiryToWhatsApp } from "@/lib/whatsapp";
+import { Send, MessageCircle } from "lucide-react";
 
 const formSchema = insertFranchiseInquirySchema.extend({
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
@@ -213,16 +214,39 @@ export default function FranchiseForm() {
             )}
           />
           
-          <div className="text-center">
-            <Button 
-              type="submit" 
-              disabled={isSubmitting}
-              className="gradient-premium text-white hover:opacity-90 px-12 py-4 text-lg font-bold transition-all transform hover:scale-105 premium-shadow"
-              data-testid="button-submit-application"
-            >
-              <Send className="mr-2" size={20} />
-              {isSubmitting ? "Submitting..." : "Submit My Application"}
-            </Button>
+          <div className="text-center space-y-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                type="button"
+                variant="outline"
+                className="border-green-500 text-green-600 hover:bg-green-50 px-8 py-4 text-lg font-bold"
+                onClick={() => {
+                  const formData = form.getValues();
+                  if (formData.fullName && formData.phone && formData.email && formData.city && formData.state && formData.territory && formData.investmentLevel) {
+                    sendFranchiseInquiryToWhatsApp(formData);
+                  } else {
+                    toast({
+                      title: "Please fill all required fields",
+                      description: "Complete the form before sending to WhatsApp",
+                      variant: "destructive",
+                    });
+                  }
+                }}
+                data-testid="button-whatsapp-application"
+              >
+                <MessageCircle className="mr-2" size={20} />
+                Send via WhatsApp
+              </Button>
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="gradient-premium text-white hover:opacity-90 px-12 py-4 text-lg font-bold transition-all transform hover:scale-105 premium-shadow"
+                data-testid="button-submit-application"
+              >
+                <Send className="mr-2" size={20} />
+                {isSubmitting ? "Submitting..." : "Submit My Application"}
+              </Button>
+            </div>
           </div>
           
           <p className="text-sm text-muted-foreground text-center mt-4">
