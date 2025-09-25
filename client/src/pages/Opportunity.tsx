@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Shield, MapPin, TrendingUp, Users, Rocket, Package, Award, Star, Target, Handshake } from "lucide-react";
+import supportImage from "@assets/stock_images/business_training_su_bc3744d5.jpg";
 
 const franchiseAdvantages = [
   {
@@ -181,7 +182,7 @@ export default function Opportunity() {
             </div>
             <div className="text-center">
               <img 
-                src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                src={supportImage} 
                 alt="Business support and training" 
                 className="rounded-xl shadow-lg"
                 data-testid="img-support"

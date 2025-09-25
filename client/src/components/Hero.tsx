@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Handshake, Download, Tag, Award, Leaf } from "lucide-react";
+import heroImage from "@assets/stock_images/successful_business__f0bfa3ee.jpg";
 
 export default function Hero() {
   return (
@@ -55,7 +56,7 @@ export default function Hero() {
           <div className="text-center">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" 
+                src={heroImage} 
                 alt="Successful business partnership and franchise opportunity" 
                 className="rounded-2xl premium-shadow mx-auto w-full max-w-md"
                 data-testid="img-hero-entrepreneur"
