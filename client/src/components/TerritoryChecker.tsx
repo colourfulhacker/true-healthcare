@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useState, useEffect } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle, XCircle, Info } from "lucide-react";
+import { getTerritoryOptions, checkTerritoryAvailability } from "../data/store";
 
 interface TerritoryAvailability {
   available: boolean;
@@ -14,54 +14,54 @@ export default function TerritoryChecker() {
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedTehsil, setSelectedTehsil] = useState("");
   const [selectedPanchayat, setSelectedPanchayat] = useState("");
-  const [checkAvailability, setCheckAvailability] = useState(false);
+  const [states, setStates] = useState<string[]>([]);
+  const [districts, setDistricts] = useState<string[]>([]);
+  const [tehsils, setTehsils] = useState<string[]>([]);
+  const [panchayats, setPanchayats] = useState<string[]>([]);
+  const [availability, setAvailability] = useState<TerritoryAvailability | null>(null);
 
-  const { data: states } = useQuery({
-    queryKey: ["/api/territories/states"],
-    enabled: true,
-  });
+  // Load states on component mount
+  useEffect(() => {
+    setStates(getTerritoryOptions("states"));
+  }, []);
 
-  const { data: districts } = useQuery({
-    queryKey: ["/api/territories/districts"],
-    queryFn: () => fetch(`/api/territories/districts?parent=${selectedState}`).then(res => res.json()),
-    enabled: !!selectedState,
-  });
-
-  const { data: tehsils } = useQuery({
-    queryKey: ["/api/territories/tehsils"],
-    queryFn: () => fetch(`/api/territories/tehsils?parent=${selectedState},${selectedDistrict}`).then(res => res.json()),
-    enabled: !!selectedState && !!selectedDistrict,
-  });
-
-  const { data: panchayats } = useQuery({
-    queryKey: ["/api/territories/panchayats"],
-    queryFn: () => fetch(`/api/territories/panchayats?parent=${selectedState},${selectedDistrict},${selectedTehsil}`).then(res => res.json()),
-    enabled: !!selectedState && !!selectedDistrict && !!selectedTehsil,
-  });
-
-  const { data: availability } = useQuery<TerritoryAvailability>({
-    queryKey: ["/api/territories/check"],
-    queryFn: () => 
-      fetch("/api/territories/check", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          state: selectedState,
-          district: selectedDistrict,
-          tehsil: selectedTehsil,
-          panchayat: selectedPanchayat,
-        }),
-      }).then(res => res.json()),
-    enabled: checkAvailability && !!selectedState && !!selectedDistrict && !!selectedTehsil && !!selectedPanchayat,
-  });
-
-  const handleSelectionChange = () => {
-    if (selectedState && selectedDistrict && selectedTehsil && selectedPanchayat) {
-      setCheckAvailability(true);
+  // Load districts when state changes
+  useEffect(() => {
+    if (selectedState) {
+      setDistricts(getTerritoryOptions("districts", selectedState));
     } else {
-      setCheckAvailability(false);
+      setDistricts([]);
     }
-  };
+  }, [selectedState]);
+
+  // Load tehsils when district changes
+  useEffect(() => {
+    if (selectedState && selectedDistrict) {
+      setTehsils(getTerritoryOptions("tehsils", `${selectedState},${selectedDistrict}`));
+    } else {
+      setTehsils([]);
+    }
+  }, [selectedState, selectedDistrict]);
+
+  // Load panchayats when tehsil changes
+  useEffect(() => {
+    if (selectedState && selectedDistrict && selectedTehsil) {
+      setPanchayats(getTerritoryOptions("panchayats", `${selectedState},${selectedDistrict},${selectedTehsil}`));
+    } else {
+      setPanchayats([]);
+    }
+  }, [selectedState, selectedDistrict, selectedTehsil]);
+
+  // Check availability when all fields are selected
+  useEffect(() => {
+    if (selectedState && selectedDistrict && selectedTehsil && selectedPanchayat) {
+      const result = checkTerritoryAvailability(selectedState, selectedDistrict, selectedTehsil, selectedPanchayat);
+      setAvailability(result);
+    } else {
+      setAvailability(null);
+    }
+  }, [selectedState, selectedDistrict, selectedTehsil, selectedPanchayat]);
+
 
   const renderStatusBox = () => {
     if (!selectedState || !selectedDistrict || !selectedTehsil || !selectedPanchayat) {
@@ -125,7 +125,6 @@ export default function TerritoryChecker() {
             setSelectedDistrict("");
             setSelectedTehsil("");
             setSelectedPanchayat("");
-            setCheckAvailability(false);
           }}
           data-testid="select-state"
         >
@@ -133,7 +132,7 @@ export default function TerritoryChecker() {
             <SelectValue placeholder="Select State" />
           </SelectTrigger>
           <SelectContent>
-            {Array.isArray(states) && states.map((state: string) => (
+            {states.map((state: string) => (
               <SelectItem key={state} value={state}>
                 {state}
               </SelectItem>
@@ -147,7 +146,6 @@ export default function TerritoryChecker() {
             setSelectedDistrict(value);
             setSelectedTehsil("");
             setSelectedPanchayat("");
-            setCheckAvailability(false);
           }}
           disabled={!selectedState}
           data-testid="select-district"
@@ -169,7 +167,6 @@ export default function TerritoryChecker() {
           onValueChange={(value) => {
             setSelectedTehsil(value);
             setSelectedPanchayat("");
-            setCheckAvailability(false);
           }}
           disabled={!selectedDistrict}
           data-testid="select-tehsil"
@@ -190,7 +187,6 @@ export default function TerritoryChecker() {
           value={selectedPanchayat} 
           onValueChange={(value) => {
             setSelectedPanchayat(value);
-            handleSelectionChange();
           }}
           disabled={!selectedTehsil}
           data-testid="select-panchayat"

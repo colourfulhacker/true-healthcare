@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -8,8 +7,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { insertFranchiseInquirySchema } from "@shared/schema";
-import { apiRequest } from "@/lib/queryClient";
+import { insertFranchiseInquirySchema } from "../schema";
+import { createFranchiseInquiry } from "../data/store";
 import { Send } from "lucide-react";
 
 const formSchema = insertFranchiseInquirySchema.extend({
@@ -22,7 +21,6 @@ type FormData = z.infer<typeof formSchema>;
 export default function FranchiseForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const queryClient = useQueryClient();
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -37,33 +35,29 @@ export default function FranchiseForm() {
     },
   });
 
-  const createInquiryMutation = useMutation({
-    mutationFn: async (data: FormData) => {
-      const response = await apiRequest("POST", "/api/franchise-inquiries", data);
-      return response.json();
-    },
-    onSuccess: () => {
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const inquiry = createFranchiseInquiry(data);
+      
       toast({
         title: "Application Submitted Successfully!",
         description: "Our team will contact you within 24 hours to discuss your franchise opportunity.",
       });
+      
       form.reset();
-      queryClient.invalidateQueries({ queryKey: ["/api/franchise-inquiries"] });
-      setIsSubmitting(false);
-    },
-    onError: (error: any) => {
+    } catch (error: any) {
+      console.error("Error creating franchise inquiry:", error);
+      
       toast({
         title: "Error",
         description: error.message || "Failed to submit application. Please try again.",
         variant: "destructive",
       });
+    } finally {
       setIsSubmitting(false);
-    },
-  });
-
-  const onSubmit = (data: FormData) => {
-    setIsSubmitting(true);
-    createInquiryMutation.mutate(data);
+    }
   };
 
   return (
