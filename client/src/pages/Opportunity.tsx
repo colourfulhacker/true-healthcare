@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Shield, MapPin, TrendingUp, Users, Rocket, Package, Award, Star, Target, Handshake } from "lucide-react";
 import supportImage from "@assets/stock_images/business_training_su_bc3744d5.jpg";
+import SEOHead from "@/components/SEOHead";
 
 const franchiseAdvantages = [
   {
@@ -74,8 +75,33 @@ const supportServices = [
 ];
 
 export default function Opportunity() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "TRUE Healthcare™ Franchise Opportunity",
+    "description": "Exclusive franchise opportunities in India's growing wellness market. Proven business model, comprehensive support, and territory protection.",
+    "url": "https://truehealthcare.co.in/opportunity",
+    "about": {
+      "@type": "Organization",
+      "name": "TRUE Healthcare™",
+      "offers": {
+        "@type": "Offer",
+        "name": "Franchise Opportunity",
+        "description": "Join 500+ successful partners with 25-40% profit margins",
+        "category": "Business Franchise"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Business Opportunity | TRUE Healthcare™ Franchise Investment"
+        description="Discover lucrative franchise opportunities with TRUE Healthcare™. Join 500+ successful partners across India. Proven business model, 25-40% profit margins, comprehensive support and territory protection."
+        keywords="TRUE Healthcare franchise opportunity, wellness business franchise, distributorship opportunity India, healthcare franchise investment, FMCG franchise, proven business model"
+        canonicalUrl="https://truehealthcare.co.in/opportunity"
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Hero Section */}

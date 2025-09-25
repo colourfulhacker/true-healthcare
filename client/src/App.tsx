@@ -6,6 +6,7 @@ import Home from "@/pages/Home";
 import Products from "@/pages/Products";
 import Apply from "@/pages/Apply";
 import Opportunity from "@/pages/Opportunity";
+import Careers from "@/pages/Careers";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/opportunity" component={Opportunity} />
       <Route path="/products" component={Products} />
       <Route path="/apply" component={Apply} />
+      <Route path="/careers" component={Careers} />
       <Route component={NotFound} />
     </Switch>
   );

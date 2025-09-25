@@ -83,8 +83,7 @@ export default function HowToBecomePartner() {
             
             <Button
               size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-bold"
+              className="bg-green-600 hover:bg-green-700 text-white border-2 border-white hover:border-green-100 px-8 py-4 text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl"
               onClick={() => {
                 const message = `🌿 *TRUE Healthcare™ Partnership Inquiry*
 

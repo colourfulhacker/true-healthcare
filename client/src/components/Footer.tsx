@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { MapPin, Phone, Tag, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Tag, MessageCircle, Mail } from "lucide-react";
 import logoUrl from "../assets/true-healthcare-logo.jpg";
 
 export default function Footer() {
@@ -45,6 +45,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/careers" className="text-blue-200 hover:text-white transition-colors" data-testid="link-footer-careers">
+                  Careers
+                </Link>
+              </li>
+              <li>
                 <Link href="/apply" className="text-blue-200 hover:text-white transition-colors" data-testid="link-footer-apply">
                   Apply Now
                 </Link>
@@ -78,6 +83,16 @@ export default function Footer() {
                 <span data-testid="text-company-phone">+91 9610485482</span>
               </div>
               <div className="flex items-center">
+                <Mail className="mr-3 flex-shrink-0" size={16} />
+                <a 
+                  href="mailto:info@truehealthcare.co.in" 
+                  className="text-blue-200 hover:text-white transition-colors"
+                  data-testid="link-email-contact"
+                >
+                  info@truehealthcare.co.in
+                </a>
+              </div>
+              <div className="flex items-center">
                 <MessageCircle className="mr-3 flex-shrink-0" size={16} />
                 <a 
                   href="https://wa.me/919660393455" 
@@ -97,10 +112,24 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-blue-800 mt-12 pt-8 text-center">
-          <p className="text-blue-200" data-testid="text-copyright">
-            &copy; 2024 TRUE Healthcare™. All rights reserved. | FSSAI Approved | Premium Quality Wellness Products
-          </p>
+        <div className="border-t border-blue-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <p className="text-blue-200 mb-4 md:mb-0" data-testid="text-copyright">
+              &copy; {new Date().getFullYear()} TRUE Healthcare™. All rights reserved. | FSSAI Approved | Premium Quality Wellness Products
+            </p>
+            <p className="text-blue-200 text-sm">
+              Website developed by{' '}
+              <a 
+                href="https://cehpoint.co.in" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-100 transition-colors font-semibold"
+                data-testid="link-cehpoint"
+              >
+                Cehpoint
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

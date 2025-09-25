@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ProductInquiryForm from "@/components/ProductInquiryForm";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, ArrowRight, Package, Users, Heart, Zap, Baby, Droplet, ShoppingCart } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 // Import actual product images
 import livAmritGoldImage from "@/assets/liv-amrit-gold-tablets.jpg";
@@ -115,8 +116,53 @@ const allProducts = [...tabletProducts, ...liquidProducts];
 
 
 export default function Products() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "TRUE Healthcare™ Product Catalog",
+    "description": "Premium wellness products including liver care, detox juices, women's health, men's vitality, children's health, and diabetes care supplements.",
+    "numberOfItems": 8,
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "name": "Liv Amrit Gold",
+        "category": "Liver Care",
+        "brand": "TRUE Healthcare™"
+      },
+      {
+        "@type": "Product",
+        "name": "Shakti Veer Plus",
+        "category": "Men's Health",
+        "brand": "TRUE Healthcare™"
+      },
+      {
+        "@type": "Product",
+        "name": "Nari Amrit Gold",
+        "category": "Women's Health",
+        "brand": "TRUE Healthcare™"
+      }
+    ],
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "TRUE Healthcare™",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "addressCountry": "IN"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Premium Health Products | TRUE Healthcare™ Wellness Supplements"
+        description="Explore TRUE Healthcare™'s premium range of health supplements including liver care tablets, detox juices, women's health, men's vitality, children's care and diabetes management products. FSSAI approved quality."
+        keywords="health supplements, liver care tablets, detox juice, women's health supplements, men's vitality products, children's health, diabetes care, FSSAI approved, wellness products India"
+        canonicalUrl="https://truehealthcare.co.in/products"
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Products Section */}

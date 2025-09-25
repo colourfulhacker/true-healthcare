@@ -2,10 +2,31 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TerritoryChecker from "@/components/TerritoryChecker";
 import FranchiseForm from "@/components/FranchiseForm";
+import SEOHead from "@/components/SEOHead";
 
 export default function Apply() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Apply for TRUE Healthcare™ Franchise",
+    "description": "Apply for exclusive TRUE Healthcare™ franchise opportunities. Check territory availability and submit your application.",
+    "url": "https://truehealthcare.co.in/apply",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "TRUE Healthcare™",
+      "url": "https://truehealthcare.co.in"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Apply Now | TRUE Healthcare™ Franchise Application Form"
+        description="Apply for your exclusive TRUE Healthcare™ franchise today. Check territory availability, fill the application form and start your wellness business journey. Secure your area now!"
+        keywords="apply TRUE Healthcare franchise, franchise application form, territory availability, wellness business opportunity, distributorship application, franchise inquiry"
+        canonicalUrl="https://truehealthcare.co.in/apply"
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Apply Now Section */}
