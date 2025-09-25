@@ -35,6 +35,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/opportunity" className="text-blue-200 hover:text-white transition-colors" data-testid="link-footer-opportunity">
+                  The Opportunity
+                </Link>
+              </li>
+              <li>
                 <Link href="/products" className="text-blue-200 hover:text-white transition-colors" data-testid="link-footer-products">
                   Our Products
                 </Link>
@@ -50,11 +55,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Product Categories</h4>
             <ul className="space-y-2 text-blue-200">
-              <li>Detox & Juices</li>
-              <li>Women's Wellness</li>
+              <li>Liver Care Products</li>
+              <li>Detox & Wellness Juices</li>
+              <li>Women's Health</li>
               <li>Men's Vitality</li>
-              <li>Kids' Health</li>
-              <li>Oral Care</li>
+              <li>Children's Health</li>
+              <li>Diabetes Care</li>
             </ul>
           </div>
           
