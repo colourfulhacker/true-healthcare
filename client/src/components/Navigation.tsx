@@ -54,15 +54,6 @@ export default function Navigation() {
                 Our Products
               </Link>
               <Link 
-                href="/demo-forms" 
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  location === "/demo-forms" ? "text-primary" : "text-muted-foreground hover:text-primary"
-                }`}
-                data-testid="link-nav-demo-forms"
-              >
-                Demo Forms
-              </Link>
-              <Link 
                 href="/apply" 
                 className="gradient-premium text-white hover:opacity-90 px-6 py-2 rounded-md text-sm font-bold transition-all transform hover:scale-105 premium-shadow"
                 data-testid="button-nav-apply"
