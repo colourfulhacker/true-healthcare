@@ -1,0 +1,93 @@
+1. CORE IDENTITY & FUNCTIONALITY:
+
+Brand: TRUE Healthcare™
+
+Model: B2B Franchise Recruitment.
+
+Functionality: This is a lead generation website. There must be NO e-commerce, NO shopping cart, NO product prices, and NO "buy now" buttons. The primary calls-to-action (CTAs) are "Apply for Franchise" and "Download Franchise Kit".
+
+2. LOGO & BRANDING:
+
+Logo: Generate a professional, trustworthy logo for "TRUE Healthcare™". It should look premium and established.
+
+Color Palette: Use a corporate and trustworthy color scheme. Primary colors: Deep Blue, Professional Grey, and White. Accent color: Gold or a vibrant Green for buttons and highlights.
+
+Fonts: Use a clean, professional font like 'Montserrat' or 'Lato'.
+
+3. WEBSITE STRUCTURE & PAGES:
+
+Home
+
+The Opportunity
+
+Our Products
+
+Apply Now (as a prominent button)
+
+4. DETAILED PAGE-BY-PAGE INSTRUCTIONS:
+
+A. Homepage (The Main Landing Page)
+
+Hero Section: Headline: "Start Your Own Business with TRUE Healthcare™ – India’s Trusted Wellness Brand", Subline: "Premium Food Supplements – Detox, Women, Men, Kids & Oral Care Products", Visuals: Smiling distributor, trust badges (FSSAI Approved, Premium Quality, 100% Natural), CTA Buttons: [Apply for Franchise], [Download Franchise Kit].
+
+Why Partner With TRUE Healthcare?: Section with icons for: Trusted Brand, Exclusive Territories, High Profit Margins (25%–40%), Full Support: Marketing & Training, Fast ROI, Wide Product Range.
+
+Opportunity Snapshot: Section for: Investment Options (₹50K–₹1L | ₹1L–₹3L | ₹3L+), Technology (Distributor Dashboard), and a visual for Slot Availability.
+
+How to Become a Partner: 5-step timeline graphic: 1. Fill Enquiry Form → 2. Verification & Area Mapping → 3. Sign Agreement + Training → 4. Start Business → 5. Ongoing Support.
+
+B. Our Products Page (UPDATED WITH DETAILS)
+
+Heading: "Our High-Quality Products: The Foundation of Your Business"
+
+Introduction: "A diverse portfolio of FSSAI-approved, natural supplements that address the core wellness needs of Indian families. High demand and premium quality ensure easy sales and customer loyalty for our partners."
+
+Liv Amrit Gold
+
+Category: Liver Care
+
+Form: 60 Tablets (1000mg)
+
+Key Selling Points for Distributors: Targets common issues like fatty liver, aids in detoxification, boosts enzymes and digestion.
+
+Supplement Facts: Bhui Amla (100mg), Makoi (100mg), Kalmegh (100mg), Punarnava (60mg), Bhringraj (60mg), Pitpapda (50mg), Rohida (50mg), Goddhi (50mg), Shankhpushpi (50mg), Daruharidra (60mg), Kasodai (60mg), Amla (50mg), Vidang (40mg), Chitrak (40mg), Nishot (40mg), Kutkai (45mg), Cinnamon (40mg), Milk Thistle (5mg).
+
+Shakti Veer Plus
+
+Category: Men's Health
+
+Form: 60 Tablets (1000mg)
+
+Key Selling Points for Distributors: High-demand vitality and energy booster, promotes vigor and stamina.
+
+Supplement Facts: Ashwagandha Ext. (100mg), Shilajit Ext. (100mg), Shatavari Ext. (100mg), Pipamool Ext. (100mg), Trikatu Ext. (75mg), Safed Musli Ext. (75mg), Kali Musli Ext. (80mg), Gokhru Ext. (80mg), Bala Ext. (100mg), Jayphal Ext. (50mg), Vidarikand (50mg), Akarkara Ext. (50mg), Kidajadi (15mg).
+
+Nari Amrit Gold
+
+Category: Women's Health
+
+Form: 60 Tablets (1000mg)
+
+Key Selling Points for Distributors: Addresses hormonal balance and vitality, a key product for the female wellness market.
+
+Supplement Facts: Sea Buckthorn (60mg), Dashmool Ext. (60mg), Noni (60mg), Pippali Ext. (60mg), Bhringraj (50mg), Jamun Ext. (40mg), Ginger (30mg), Baheda Ext. (50mg), Lodhra Ext. (40mg), and others from the label.
+
+Super Detox Plus Juice
+
+Category: General Wellness / Detox
+
+Form: 1000ml Juice
+
+Key Selling Points for Distributors: A complete body detox solution, popular for general health, immunity, and skin wellness.
+
+Full Composition (per 10ml): Lemon Grass (300mg), Amla (100mg), Harda (200mg), Beheda (200mg), Aloevera (300mg), Curcumin (50mg), Punarnava (50mg), Ginger (50mg), Giloy (100mg), Green Tea (50mg), Tulsi (90mg), and others from the label.
+
+(Continue this format for all other products like True Diabcare Syrup, True Kids Care Syrup, etc.)
+
+C. Apply Now (Franchise Enquiry Form Page)
+
+Heading: "Apply for Your Exclusive TRUE Healthcare™ Franchise"
+
+Interactive Map & Slot Tracker (UI Design): Design a tool with dropdowns for [State] → [District] → [Tehsil] → [Panchayat]. Include a visual status box to show real-time availability and create urgency (e.g., "Only 2 slots left!").
+
+Franchise Enquiry Form: Fields for Full Name, Phone, Email, City, State, Proposed Investment Level (Dropdown), and a message box.
