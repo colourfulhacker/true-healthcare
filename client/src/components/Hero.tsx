@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Start Your Own Business with <span className="text-accent">TRUE Healthcare™</span>
+              Start Your Own Business with <span className="text-accent">TRUE Healthcare™</span> – India's Trusted Wellness Brand
             </h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Premium Food Supplements – Detox, Women, Men, Kids & Oral Care Products

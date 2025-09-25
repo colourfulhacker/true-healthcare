@@ -36,6 +36,15 @@ export default function Navigation() {
                 Home
               </Link>
               <Link 
+                href="/opportunity" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  location === "/opportunity" ? "text-primary" : "text-muted-foreground hover:text-primary"
+                }`}
+                data-testid="link-nav-opportunity"
+              >
+                The Opportunity
+              </Link>
+              <Link 
                 href="/products" 
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                   location === "/products" ? "text-primary" : "text-muted-foreground hover:text-primary"
