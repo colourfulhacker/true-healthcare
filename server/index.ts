@@ -7,7 +7,13 @@ const app = express();
 async function setupVite() {
   // Create Vite server in middleware mode for development
   const vite = await createViteServer({
-    server: { middlewareMode: true },
+    server: { 
+      middlewareMode: true,
+      allowedHosts: true,
+      hmr: {
+        clientPort: 80
+      }
+    },
     appType: "spa", 
     root: path.resolve(process.cwd(), "client"),
     resolve: {
