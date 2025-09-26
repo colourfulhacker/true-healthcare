@@ -7,6 +7,7 @@ import Products from "@/pages/Products";
 import Apply from "@/pages/Apply";
 import Opportunity from "@/pages/Opportunity";
 import Careers from "@/pages/Careers";
+import ColorSwitcher from "@/components/ColorSwitcher";
 
 function Router() {
   return (
@@ -25,6 +26,7 @@ function App() {
   return (
     <TooltipProvider>
       <Toaster />
+      <ColorSwitcher />
       <Router />
     </TooltipProvider>
   );
