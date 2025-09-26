@@ -95,8 +95,8 @@ export default function WhyPartner() {
             
             <Button
               size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-bold"
+              variant="ghost"
+              className="bg-white/10 border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-bold"
               onClick={() => {
                 const message = `🌿 *TRUE Healthcare™ Partnership Questions*
 
